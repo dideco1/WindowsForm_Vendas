@@ -104,9 +104,20 @@ namespace Exercicio1__mercadinho_
             }
             else
             {
+
+                double vlr_unit = double.Parse(dgv.CurrentRow.Cells["dgv_vlrunit"].Value.ToString());
+                int qntd = int.Parse(dgv.CurrentRow.Cells["dgv_qntd"].Value.ToString());
+                total -= vlr_unit * qntd;
+
+                lbl_total.Text = total.ToString("C");
                 dgv.CurrentRow.Cells["dgv_desc"].Value = txt_desc.Text;
                 dgv.CurrentRow.Cells["dgv_qntd"].Value = txt_qntd.Text;
                 dgv.CurrentRow.Cells["dgv_vlrunit"].Value = txt_vlrunit.Text;
+
+                double vlr_unit1 = double.Parse(dgv.CurrentRow.Cells["dgv_vlrunit"].Value.ToString());
+                int qntd1 = int.Parse(dgv.CurrentRow.Cells["dgv_qntd"].Value.ToString());
+                total += vlr_unit1 * qntd1;
+                lbl_total.Text = total.ToString("C");
             }
 
 
